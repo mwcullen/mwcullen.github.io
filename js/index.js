@@ -1,4 +1,3 @@
-var downloadLink = document.getElementById('download');
 var record = document.getElementById('record');
 var stop = document.getElementById('stop');
 var audio = document.getElementById('audio');
@@ -33,15 +32,12 @@ var handleSuccess = function(stream) {
         console.log("data available after MediaRecorder.stop() called.");
 
         var blob = new Blob(recordedChunks, {'type':'audio/ogg; codecs=opus'})
-
         recordedChunks = [];
         var audioURL = window.URL.createObjectURL(blob);
 
         audio.src = audioURL;
 
         console.log("recorder stopped");
-
-
     }
 
     mediaRecorder.ondataavailable = function(e) {
