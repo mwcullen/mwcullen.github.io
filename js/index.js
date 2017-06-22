@@ -1,5 +1,3 @@
-let shouldStop = false;
-let stopped = false;
 var downloadLink = document.getElementById('download');
 var record = document.getElementById('record');
 var stop = document.getElementById('stop');
@@ -43,7 +41,7 @@ var handleSuccess = function(stream) {
 
         console.log("recorder stopped");
 
-        
+
     }
 
     mediaRecorder.ondataavailable = function(e) {
