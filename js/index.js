@@ -44,11 +44,11 @@ var handleSuccess = function(stream) {
       var transcript_interim = '';
 
       for(var i = e.resultIndex; i < e.results.length; ++i){
-        if(event.results[i].isFinal){
-          transcript_final += event.results[i][0].transcript;
+        if(e.results[i].isFinal){
+          transcript_final += e.results[i][0].transcript;
         }
         else {
-          transcript_interim+= event.results[i][0].transcript;
+          transcript_interim+= e.results[i][0].transcript;
         }
       }
       result.innerHTML = transcript_interim;
